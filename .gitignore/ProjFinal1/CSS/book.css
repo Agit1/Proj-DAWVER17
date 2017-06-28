@@ -1,0 +1,166 @@
+
+body {
+	margin : 0;
+	padding : 0;
+	background-color: #E6ECF5;
+}
+
+#primerId {
+	background-color : #0C2643;
+	margin : 0;
+}
+
+
+h1 {
+	margin : 0;
+	font-size : 36px;
+	color : white;
+	padding : 20;
+	margin-left: 300px;
+}
+
+
+#menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background-color: #587391;
+	overflow: hidden;
+
+}
+
+
+#menu li {
+	float: left;
+	padding-top: 20px;
+	padding-right: 60px;
+	padding-left: 60px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-weight: bold;
+}	
+
+
+ul#menu li:hover, ul#menu li.selected {
+
+	background-color: #203E60;
+	color: white;
+	cursor: pointer;
+}
+
+
+.home {
+	margin-left: 100px;
+}
+
+
+#home {
+	border : 2px dashed blue;
+	height : 600px;
+	width : 1100px;
+	margin-left: 200px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#aboutSite {
+	border : 2px double blue;
+	height : 500px;
+	width : 700px;
+	margin-left: 300px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: left;
+	font-size: 20px;
+	padding-left: 20px;
+}
+
+
+#aboutSite h4 {
+	text-align: center;
+}
+
+
+.hiddenSection { 
+	display : none;
+ }
+
+ #registroUsuariosId 
+ {
+ 	border : 2px solid blue;
+	height : 670px;
+	width : 400px;
+	margin-left: 500px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-left: 100px;
+	font-size: 20px;
+	float: left;
+	display:none;
+	line-height: 80%;
+ }
+
+
+ #loginUsersId
+ {
+ 	border : 2px solid blue;
+	height : 500px;
+	width : 400px;
+	margin-left: 500px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-left: 100px;
+	font-size: 20px;
+	float: left;
+ }
+
+ .button {
+ 	border : 0;
+ 	background-color: #89a0c4;
+ 	padding: 10px 20px;
+ 	color : white;
+ 	height: 40px;
+ 	width: 120px;
+ 	font-size: 16px;
+ }
+
+
+.mensajeError {
+	color:red;
+	display : none;
+	line-height: 0%;
+}
+
+#search {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+#search:focus {
+    width: 15%;
+}
+
+#agregarLibro {
+	border : 2px double blue;
+	height : 500px;
+	width : 400px;
+	margin-left: 300px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	text-align: left;
+	font-size: 20px;
+	padding-left: 60px;
+	line-height: 1px;
+}
