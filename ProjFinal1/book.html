@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel = "stylesheet" href = "CSS/book.css" type ="text/css">
+
+	<script type = "text/javascript" src = "Scripts/jquery.js"></script>
+
+	<script type = "text/javascript" src = "Scripts/book.js"></script>
+
+
+	
+	<title>BOOK</title>
+</head>
+
+<body>
+
+	<div id ="primerId">
+		<h1> BOOK </h1>
+
+	</div>
+
+	<ul id ="menu">
+		<li class = "home selected"> Home </li>
+		<li class = "mostPopular"> Most Popular</li>
+		<li class = "aboutSite"> About the Site </li>
+		<li class = "agregarLibro"> Agregar Libro </li>
+		<li class = "usuario"> Usuario </li>
+		<li class = "loginRegister"> Login/Register </li>
+		
+		<form>
+ 			 <input type="text" id="search" placeholder="Buscar..">
+		</form>
+	</ul>
+
+	
+
+	<div id = "home" class = "currentSelection"> 
+		<p id ="userHome"> user </p>
+		<h2> Home </h2>
+		<div id="librosId">
+		</div>
+
+	</div>
+
+
+	<div id = "mostPopular" class = "hiddenSection"> 
+		Most Popular 
+	</div>
+
+	<div id = "aboutSite" class = "hiddenSection"> 
+
+
+		<h4>Vision</h4>
+		<p>Ser una aplicacion lider a largo plazo en la critica de libros.</p>
+		</br>
+		<h4>Objectivo </h4>
+		<p>
+		Crear una herramienta digital de facil acceso dirigida al publico en general, donde tanto especialistas como usuarios puedan crear una crtica y una calificacion al libro.
+		</p>
+		</br>
+
+		<h4> Enfoque </h4>
+		<p>
+			Publico en general, el proyecto va dirigido a todas las personas que esten interesadas en adquirir un libro, incluyendo las diversas categorias de libros que existen.
+		</p>
+
+	</div>
+
+	<div id ="agregarLibro" class ="hiddenSection">
+		<p> </p>
+		<h3> Agregar Libro </h3>
+		<p>
+		</p>
+		</p>
+		</br>	
+		</br>
+		
+		Titulo : 
+		</p>
+		<input type ="text" id = "tituloNuevoLibro"> </input>
+		</p>
+		Nombre del Autor : 
+		</p>
+		<input type ="text" id = "nombreAutorNuevoLibro"> </input>
+		</p>
+		Apellido del autor : 
+		</p>
+		<input type ="text" id = "apellidoAutorNuevoLibro"> </input>
+		</p>
+		Genero : 
+		</p>
+		<input type ="text" id = "generoNuevoLibro"> </input>
+		</p>
+		Anio de publicacion : 
+		</p>
+		<input type ="text" id = "anioNuevoLibro"></input>
+		</p>
+		<input type = "button" id ="agregarLibroButton" value = "Agregar" class = "button"> </input>
+
+	</div>
+
+	<div id = "usuario" class = "hiddenSection">
+		<h2 id = "h2Usuario"> H2 </h2>
+
+	</div>
+
+	<div id = "loginRegister" class = "hiddenSection">
+		
+		<div id = "registroUsuariosId">
+
+			<h2> Registro de Usuarios </h2>
+
+			<p> Nombre : </p>
+			<input type ="text" id = "nombreRegister"> </input>
+
+			<p> Apellido : </p>
+			<input type ="text" id = "apellidoRegister"> </input>
+
+			<p> email : </p>
+			<input type ="email" id = "emailRegister"> </input>
+
+			<p> Password : </p>
+			<input type ="password" id = "passwordRegister"> </input>
+
+			<p> Confirmar Password : </p>
+			<input type ="password" id = "ConfirmaPasswordRegister"> </input>
+
+			<p id ="camposVaciosRegister" class ="mensajeError" > 
+				Campos vacios 
+			</p>
+
+			<p id ="passwordsError" class = "mensajeError">
+				 Passwords no coinciden 
+			</p>
+
+			<p id ="datosIncorrectosRegister" class = "mensajeError">
+				 Datos incorrectos 
+			</p>
+
+
+			<p>
+			<input type = "button" class = "button" id ="registraUserButton" value ="Registrar"> </input> 
+			</p>
+			
+
+			<p> Ingresa en una cuenta existente </p>
+
+			<p>
+			<input type = "button" class = "button" id ="registerLoginButton" value ="Login"> </input> 
+			</p>
+
+
+		</div>
+
+		<div id = "loginUsersId">
+			<h2> Login de Usuarios </h2>
+
+			<p> email : </p>
+			<input type ="email" id = "emailLogin"> </input>
+
+			<p> Password : </p>
+			<input type ="password" id = "passwordLogin"> </input>
+
+			<p id ="camposVaciosLogin" class ="mensajeError" > 
+				Campos vacios 
+			</p>
+
+			<p id ="datosIncorrectos" class = "mensajeError">
+				 Datos incorrectos 
+			</p>
+
+			<p>
+			<input type = "button" class = "button" id ="loginUserButton" value ="Login"> </input> 
+			<input type = "checkbox" id ="rememberMe" > Recordar mis datos</input>
+			</p>
+
+			</br>
+			<p> Registrar nuevo usuario </p>
+
+			<p>
+			<input type = "button" class = "button" id ="newUserButton" value ="Registrar"> </input> 
+			</p>
+
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>
