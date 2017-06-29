@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documento HTML</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <script src="js/jquery.js" type="text/javascript"> </script>
+    </head>
+    <body>
+        <h1> AJAX Examples</h1>
+        <fieldset>
+            <legend>Reading an XML and loading it into an un-ordered list</legend>
+            <div id="listContainer">
+                <ul id="restaurantCatalog">
+                </ul>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Reading an XML and loading it into a table</legend>
+            <div id="tableContainer">
+                <table id="foodTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Serving</th>
+                        <th>Calories</th>
+                        <th>Cholesterol</th>
+                        <th>Sodium</th>
+                        <th>Carbohydrates</th>
+                        <th>Fiber</th>
+                        <th>Protein</th>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Reading a JSON file and loading it into a dropdown menu</legend>
+            <div id="dropdownMenuContainer">
+                <label> State: </label>
+                <select id="mexicanStates">
+                    <option value="0">Select a state...</option>
+                </select>
+                <label> Capital: </label>
+                <input id="stateCapital" type="text" value="">
+            </div>
+        </fieldset>
+    </body>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $.ajax({
+                url : "data/restaurants.xml",
+                dataType : "xml",
+                type : "GET",
+                success : function(data){
+                    var newHMTLContent = "";
+
+                    $(data).find("restaurant").each(function(){
+                        newHMTLContent += "<li> " + 
+                                            $(this).attr("name") +
+                                          "</li>";
+                    });
+
+                    $("#restaurantCatalog").append(newHMTLContent);
+                },
+                error : function(errorMsg){
+                    console.log(errorMsg);
+                }
+
+            });
+
+            $.ajax({
+                type : "GET",
+                url : "data/nutrition.xml",
+                dataType : "xml",
+                success : function(xmlData) {
+                    var creatingTable = "";
+
+                    $(xmlData).find("food").each(function(){
+                        var $actualElement = $(this);
+                        creatingTable += "<tr>";
+                            creatingTable += "<td>" + $actualElement.find("name").text() + "</td>";
+                            creatingTable += "<td>" + $actualElement.find("serving").text() + $actualElement.find("serving").attr("units")  + "</td>";
+                            creatingTable += "<td>" + $actualElement.find("calories").attr("total") + "</td>";
+                            creatingTable += "<td>" + $actualElement.find("cholesterol").text() + "</td>";
+                            creatingTable += "<td>" + $actualElement.find("sodium").html() + "</td>";
+                            creatingTable += "<td>" + $actualElement.find("carb").text() + "</td>";
+                            creatingTable += "<td>" + $actualElement.find("fiber").text() + "</td>";
+                            creatingTable += "<td>" + $actualElement.find("protein").text() + "</td>";
+                        creatingTable += "</tr>";
+                    });
+                    
+                    $("#foodTable").append(creatingTable);
+                },
+                error : function(errorMsg){
+                    console.log(errorMsg);
+                }
+            });
+
+            $.ajax({
+                url : "data/mexicanStates.json",
+                type : "GET",
+                dataType : "json",
+                success : function(jsonData){
+                    var newHTML = "";
+
+                    for (var i = 0; i < jsonData.length; i ++)
+                    {
+                        newHTML += '<option value="' + jsonData[i].identifier + '" >' +
+                                    jsonData[i].state + '</option>';
+                    }
+
+                    $("#mexicanStates").append(newHTML);
+                },
+                error : function(errorMsg){
+                    alert(errorMsg);
+                }
+            });
+
+            $("#mexicanStates").on("change", function(){
+
+                var currentState = $(this).val();
+
+                $.ajax({
+                    url : "data/mexicanStatesCapitals.json",
+                    type : "GET",
+                    dataType : "json",
+                    success : function(jsonData){
+                    
+                        var capital = "";
+
+                        for (var i = 0; i < jsonData.length; i ++){
+                            if (currentState == jsonData[i].id){
+                                capital = jsonData[i].capital;
+                                break;
+                            }
+                        }
+
+                        $("#stateCapital").val(capital);
+
+                    }
+
+                });
+            });
+
+
+
+
+
+
+
+
+        });
+    </script>
+</html>
+
+
+
+
+
+
+
+
